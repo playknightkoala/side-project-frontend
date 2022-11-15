@@ -1,6 +1,13 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const account = ref("");
+const password = ref("");
+</script>
+
 <template>
   <div class="grid flex h-screen justify-center items-center bg-gray-400">
-    <div class="bg-white rounded w-96 h-80 text-center">
+    <div class="bg-white rounded w-96 h-60 text-center">
       <div class="p-10">
         <h3 class="text-2xl font-bold">請登入系統</h3>
         <hr class="my-3 opacity-75" />
@@ -21,12 +28,14 @@
                   d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                 />
               </svg>
-              使用者帳號
+              <input
+                v-model="account"
+                placeholder="輸入使用者帳號"
+                type="text"
+                class="border-2 rounded placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+                style="padding: 0.2rem 1rem"
+              />
             </span>
-            <input
-              type="text"
-              class="border-2 rounded placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
-            />
           </label>
         </div>
         <div class="form-control mb-5">
@@ -46,15 +55,19 @@
                   d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
                 />
               </svg>
-              密碼
+              <input
+                v-model="password"
+                placeholder="輸入密碼"
+                type="password"
+                class="border-2 rounded placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+                style="padding: 0.2rem 1rem"
+              />
             </span>
-            <input
-              type="password"
-              class="border-2 rounded placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
-            />
           </label>
         </div>
-        <button class="bg-sky-500 hover:bg-sky-700 px-5 py-2 text-sm leading-5 rounded-full font-semibold text-white">
+        <button
+          class="bg-sky-500 hover:bg-sky-700 px-5 py-2 text-sm leading-5 rounded-full font-semibold text-white"
+        >
           登入
         </button>
       </div>
